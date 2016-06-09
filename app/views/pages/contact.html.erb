@@ -1,0 +1,32 @@
+<style>
+  #map {
+    width: 500px;
+    height: 400px;
+    background-color: #CCC;
+  }
+</style>
+<div class="row">
+  <div class="col-md-6">
+    <form action="">
+    <input type="text" class="form-control" placeholder="Name">
+    <input type="text" class="form-control" placeholder="Email">
+    <input type="text" class="form-control" placeholder="Phone #">
+    <textarea name="" class="form-control" cols="30" rows="14" placeholder="Message"></textarea>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <div id="map"></div>
+  </div>
+</div>
+
+<script>
+  function initMap() {
+    var mapDiv = document.getElementById('map');
+    var map = new google.maps.Map(mapDiv, {
+      center: {lat: 40.775, lng: -111.891},
+      zoom: 8
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+async defer></script>
