@@ -5,3 +5,15 @@
 </div>
 
 <h3>Recent listings</h3>
+<hr>
+<div class="row">
+	<% @posts.each do |post| %>
+		<div class="col-md-4">
+		<h4><%= post.manufacturer %> <%= post.model %></h4>
+		<p><%= number_to_currency(post.price) %></p>
+		<%= truncate(post.body, :length => 200) %>
+		<p> <%= image_tag post.picture.url(:thumb) %>   -   <%= link_to 'View', post, :class => 'btn btn-primary'%></p>
+		</div>
+	<% end %>
+</div>
+

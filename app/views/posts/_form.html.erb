@@ -27,8 +27,14 @@
   <%= f.label :body %>
   <%= f.text_area :body, :required => true, :class => 'form-control' %>
 </div>
+
+<div class="field">
+  <%= f.label :picture %>
+  <%= f.file_field :picture , :class => 'form-control' %>
+</div>
 <div class="actions">
   <br>
   <%= f.submit 'Submit', :required => true, :class => 'btn btn-primary' %>
 </div>
 <% end %>
+
