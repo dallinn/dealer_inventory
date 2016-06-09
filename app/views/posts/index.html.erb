@@ -2,10 +2,11 @@
 
 <h1>Listing Posts</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Title</th>
+      <th>Manufacturer</th>
+      <th>Model</th>
       <th>Price</th>
       <th>Body</th>
       <th colspan="3"></th>
@@ -15,12 +16,13 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
+        <td><%= post.manufacturer %></td>
+        <td><%= post.model %></td>
         <td><%= post.price %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= truncate(post.body, :length => 10) %></td>
+        <td><%= link_to 'Show', post, :class => 'btn btn-primary'%></td>
+        <td><%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-success' %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, :class => 'btn btn-danger', data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
