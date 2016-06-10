@@ -41,10 +41,15 @@ gem 'devise'
 # Paperclip file management
 gem "paperclip", "~> 5.0.0.beta1"
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+group :development do
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
 end
+
+gem 'puma'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
