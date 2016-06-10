@@ -5,6 +5,10 @@
 		<p><%= number_to_currency(post.price) %></p>
 		<%= truncate(post.body, :length => 200) %>
 		<p> <%= image_tag post.picture.url(:thumb) %>   -   <%= link_to 'View', post, :class => 'btn btn-primary'%></p>
+		<% if post.id % 3 == 0 %>
+			</div>
+			<div class="row">
+		<% end %>
 		</div>
 	<% end %>
 </div>
